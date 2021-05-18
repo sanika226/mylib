@@ -1,0 +1,49 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "bookName": "The Power of your Subconscious Mind",
+      "authorName": "Joseph Murphy",
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "bookName": "Autobiography of a Yogi",
+      "authorName": "P Yogananda",
+      "rating": 4
+    },
+    {
+      "0": {
+        "bookName": "",
+        "authorName": "",
+        "rating": ""
+      },
+      "bookName": "art",
+      "auhtorName": "deelip",
+      "ratings": "3",
+      "id": 3
+    },
+    {
+      "0": {
+        "bookName": "",
+        "authorName": "",
+        "rating": ""
+      },
+      "bookName": "life is beautiful",
+      "auhtorName": "joshi",
+      "ratings": "4",
+      "id": 4
+    },
+    {
+      "0": {
+        "bookName": "",
+        "authorName": "",
+        "rating": ""
+      },
+      "bookName": "earth",
+      "authorName": "patil",
+      "ratings": "5",
+      "id": 5
+    }
+  ]
+}
