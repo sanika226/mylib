@@ -5,17 +5,17 @@ import { useHistory, useParams } from 'react-router'
 function Editbook() {
     const {id}=useParams();
     let history=useHistory();
-    // const [bookList,setBookList]=useState([]);
+    //const [bookList,setBookList]=useState([]);
     const [updatebook,setUpdateBook]=useState([
         {
             bookName:"",
-            auhtorName:"",
-            rating:""
+            authorName:"",
+            ratings:""
         }
     ]);
     useEffect(()=>{
      axios
-     .get("http://localhost:3000/books",updatebook)
+     .get(`http://localhost:3000/books/${id}`)
      .then((response)=>{
          setUpdateBook(response.data);
          console.log(response);
@@ -26,10 +26,9 @@ function Editbook() {
     
      
     },[])
-    const updateBook=(e)=>{
-     e.preventDefault();
+    const updateBook=()=>{
         axios
-        .put(`http://localhost:3000/books /${id}`,updatebook)
+        .put(`http://localhost:3000/books/${id}`,updatebook)
         .then((response)=>{
             console.log(response.data);
             console.log(response)
@@ -40,7 +39,7 @@ function Editbook() {
         history.push("/")
     }
     const handleInputChange=(e)=>{
-        setUpdateBook({...updateBook,[e.target.name]:e.target.value});
+        setUpdateBook({...updatebook,[e.target.name]:e.target.value});
     }
     return (
         <div className="container p-4">
@@ -61,7 +60,7 @@ function Editbook() {
    class="form-control"
    id="exampleFormControlInput2"
    placeholder=" enter authorname" 
-  name="auhtorName" 
+  name="authorName" 
   value={updatebook.authorName}
   onChange={handleInputChange}
   />

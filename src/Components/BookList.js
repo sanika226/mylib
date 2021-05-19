@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React,{ useState, useEffect } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-
+import Editbook from '../Components/Editbook';
 function BookList() {
   const [bookList, setBookList] = useState([]);
   useEffect(() => {
@@ -17,6 +16,15 @@ function BookList() {
         console.log(error)
     })
   }, [])
+  const deleteBook=(delId)=>{
+    axios.delete(`http://localhost:3000/books/${delId}`)
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+    }
   
   return (
   <div>
@@ -29,7 +37,7 @@ function BookList() {
       <tr>
         <th>Book Name</th>
         <th>Author Name</th>
-        <th>Rating</th>
+        <th>Ratings</th>
     
       </tr>
     </thead>
@@ -40,9 +48,9 @@ function BookList() {
     
         <td>{element.bookName}</td>
         <td>{element.authorName}</td>
-        <td>{element.rating}</td>
-        <td><Link to={`/editbook/${element.id}`}>Edit</Link></td>
-        <button>Delete</button>
+        <td>{element.ratings}</td>
+        <td><Link to={`/Editbook/${element.id}`}>Edit</Link></td>
+        <td><button onClick={()=>deleteBook(element.id)}>Delete</button></td>
       </tr>
         
     ))}

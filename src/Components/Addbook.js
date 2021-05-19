@@ -7,7 +7,7 @@ function Addbook() {
     const [newBook,setNewBook]=useState([{
         bookName:"",
         authorName:"",
-        rating:""
+        ratings:""
     }
     ]);
     const handleInputChange=(e)=>{
@@ -45,7 +45,7 @@ function Addbook() {
    id="exampleFormControlInput2"
    placeholder=" enter authorname" 
   name="authorName" 
-  value={newBook.auhtorName}
+  value={newBook.authorName}
   onChange={handleInputChange}
   />
 </div>

@@ -11,7 +11,7 @@ function App() {
     return(
       <div>
       
-         <BrowserRouter>
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact component={BookList}></Route>
           <Route path="/Addbook" component={Addbook}></Route>
@@ -19,7 +19,7 @@ function App() {
         
 
         </Switch>
-        </BrowserRouter> 
+      </BrowserRouter> 
       </div>
     )
 
